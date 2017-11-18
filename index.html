@@ -6,7 +6,7 @@
 		
 	</head>
 	<body>
-		<input type="text" id="numscreen" value="0" onfocus="command()"/>
+		<input type="text" id="numscreen" value="0"/>
 		<input type="button" value="1" onclick="a(1)"/>
 		<input type="button" value="2" onclick="a(2)"/>
 		<input type="button" value="3" onclick="a(3)"/>
@@ -86,7 +86,7 @@
 						case 1:sum = c + d;document.getElementById("numscreen").value = sum;break;//加法运算
 						case 2:sum = c - d;document.getElementById("numscreen").value = sum;break;//减法运算
 						case 3:sum = c * d;document.getElementById("numscreen").value = sum;break;//乘法运算
-						case 4:
+						case 4:sum = c / d;document.getElementById("numscreen").value = sum;break;//除法运算
 					}
 				} else{
 					
