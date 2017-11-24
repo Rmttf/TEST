@@ -6,7 +6,7 @@
 		
 	</head>
 	<body>
-		<input type="text" id="numscreen" value="0"/>
+		<input type="text" id="numscreen" value=""/>
 		<input type="button" value="1" onclick="a(1)"/>
 		<input type="button" value="2" onclick="a(2)"/>
 		<input type="button" value="3" onclick="a(3)"/>
@@ -23,6 +23,8 @@
 		<input type="button" value="*" onclick="times()"/>
 		<input type="button" value="/" onclick="divide()"/>
 		
+		<input type="button" value="C" onclick="clearscreen()"/>
+		<input type="button" value="<--" onclick="del()"/>
 		<input type="button" value="=" onclick="equal()"/>
 		
 		<script type="text/javascript">
@@ -57,25 +59,39 @@
 			function add(){
 				operate = 1;
 				operating = 1;
-				document.getElementById("numscreen").value = "0";
+				document.getElementById("numscreen").value = "";
 			}
 			
 			function minus(){
 				operate = 1;
 				operating = 2;
-				document.getElementById("numscreen").value = "0";
+				document.getElementById("numscreen").value = "";
 			}
 			
 			function times(){
 				operate = 1;
 				operating = 3;
-				document.getElementById("numscreen").value = "0";
+				document.getElementById("numscreen").value = "";
 			}
 			
 			function divide(){
 				operate = 1;
 				operating = 4;
-				document.getElementById("numscreen").value = "0";
+				document.getElementById("numscreen").value = "";
+			}
+			
+			function del(){
+				var str = document.getElementById("numscreen").value.toString();
+				str = str.substr(0,str.length-1);
+				document.getElementById("numscreen").value = str;
+			}
+			
+			function clearscreen(){
+				var str = document.getElementById("numscreen").value.toString();
+				document.getElementById("numscreen").value = "";
+				operate = 0;
+				operating = 0;
+				c = d = 0;
 			}
 			
 			function equal(){
@@ -91,6 +107,7 @@
 				} else{
 					
 				}
+				c = sum;
 				operate = 0;
 				operating = 0;
 			}
