@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>test</title>
+		
+	</head>
+	<body>
+		<input type="text" id="numscreen" value=""/>
+		<input type="button" value="1" onclick="a(1)"/>
+		<input type="button" value="2" onclick="a(2)"/>
+		<input type="button" value="3" onclick="a(3)"/>
+		<input type="button" value="4" onclick="a(4)"/>
+		<input type="button" value="5" onclick="a(5)"/>
+		<input type="button" value="6" onclick="a(6)"/>
+		<input type="button" value="7" onclick="a(7)"/>
+		<input type="button" value="8" onclick="a(8)"/>
+		<input type="button" value="9" onclick="a(9)"/>
+		<input type="button" value="0" onclick="a(0)"/>
+		
+		<input type="button" value="+" onclick="add()"/>
+		<input type="button" value="-" onclick="minus()"/>
+		<input type="button" value="*" onclick="times()"/>
+		<input type="button" value="/" onclick="divide()"/>
+		
+		<input type="button" value="C" onclick="clearscreen()"/>
+		<input type="button" value="<--" onclick="del()"/>
+		<input type="button" value="=" onclick="equal()"/>
+		
+		<script type="text/javascript">
+			var operate = 0; //判断是否被操作
+			var operating = 0;//判断所要执行的操作是什么
+			var c;//第一个数
+			var d;//第二个数
+			var sum = 0;//结果
+			
+			function a(num){
+				b = num.toString();
+				if (operate == 0) {
+					c = document.getElementById("numscreen").value;
+					if(c == "0"){
+						c = b;
+					}else{
+						c =  c + b;
+					}
+					document.getElementById("numscreen").value = c;	
+				} else{
+						d = document.getElementById("numscreen").value;
+						if(d == "0"){
+							d = b;
+						}else{
+							d =  d + b;
+						}
+						document.getElementById("numscreen").value = d;
+					}
+				}
+			
+			
+			function add(){
+				operate = 1;
+				operating = 1;
+				document.getElementById("numscreen").value = "";
+			}
+			
+			function minus(){
+				operate = 1;
+				operating = 2;
+				document.getElementById("numscreen").value = "";
+			}
+			
+			function times(){
+				operate = 1;
+				operating = 3;
+				document.getElementById("numscreen").value = "";
+			}
+			
+			function divide(){
+				operate = 1;
+				operating = 4;
+				document.getElementById("numscreen").value = "";
+			}
+			
+			function del(){
+				var str = document.getElementById("numscreen").value.toString();
+				str = str.substr(0,str.length-1);
+				document.getElementById("numscreen").value = str;
+			}
+			
+			function clearscreen(){
+				var str = document.getElementById("numscreen").value.toString();
+				document.getElementById("numscreen").value = "";
+				operate = 0;
+				operating = 0;
+				c = d = 0;
+			}
+			
+			function equal(){
+				if (operate = 1 && operating !=0) {
+					c = parseInt(c);
+					d = parseInt(d);
+					switch(operating){
+						case 1:sum = c + d;document.getElementById("numscreen").value = sum;break;//加法运算
+						case 2:sum = c - d;document.getElementById("numscreen").value = sum;break;//减法运算
+						case 3:sum = c * d;document.getElementById("numscreen").value = sum;break;//乘法运算
+						case 4:sum = c / d;document.getElementById("numscreen").value = sum;break;//除法运算
+					}
+				} else{
+					
+				}
+				c = sum;
+				operate = 0;
+				operating = 0;
+			}
+		</script>
+	</body>
+</html>

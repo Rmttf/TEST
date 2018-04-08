@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<title>jQuery#Ajax</title>
+	</head>
+	<body>
+		<input type="text" id="input" value="" />
+		<div id="content">
+			
+		</div>
+		<input type="button" id="btnCheck" value="按钮" />
+		<a href="javascript:;" id="btn">按钮</a>
+		
+		
+		<script type="text/javascript">
+//				$("#btnCheck").bind("click",function(){
+//					$.ajax({
+//						url:"123.206.59.147/直播1.0/select.php",
+//						data:null,
+//						success:function (data){
+//							document.getElementById("content").innerHTML = data;	
+//						}
+//						
+//					})
+//				})
+
+			 
+				$("#btnCheck").on('click',function (){
+					$.ajax({
+					url:"echo.php",
+					data:{name:777},
+					type:"GET",
+					success:function(data){
+						document.getElementById("content").innerHTML = data;
+					}
+					})
+				})
+			
+			
+			
+			
+			
+			var a = document.getElementById("btn");
+			a.addEventListener('click',function (){
+				console.log("1111");
+			});
+			
+			a.addEventListener('click',function (){
+				console.log("2222");
+			});
+//			
+//			a.onclick = function(){
+//				console.log("1111");
+//			};
+//			a.onclick = function(){
+//				console.log("2222");
+//			};
+		</script>
+	</body>
+</html>
