@@ -1,0 +1,16 @@
+/*创建鼠标滑过或选中样式*/
+    .mouse_over:hover{
+        background-color: #eaf4fe;
+        border-radius:3px;
+        padding: 0 4px;
+        cursor: pointer;/*光标变成小手样式*/
+        transition: all .2s ease-in-out;/*设置0.2秒变化时长*/
+    }
+    .mouse_over:focus{/*元素被选中时样式,注意！非输入框元素需设置tabindex="1"属性此样式才能起效*/
+        outline:none;/*去除:focus带来的蓝色outline*/
+        background-color: #d5e8fc;
+        border-radius:3px;
+        padding: 0 4px;
+        cursor: pointer;
+        transition: all ease-in-out;
+    }

@@ -1,0 +1,81 @@
+/*
+绝对定位居中法（水平垂直居中）
+包含块相对定位，被定位元素绝对定位，
+优点：包含块的宽高、定位元素的宽高，对垂直居中没有影响
+*/
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.box{
+    width: 100%;
+    height: 100%;
+    background:#e9dfc7; 
+    border:1px solid red;
+    position: relative;
+
+}
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+/*
+绝对定位和transform（水平垂直居中）
+优点：不受定位元素的宽高限制，translate()变形函数中使用百分比值时，是以这个元素自身的宽度和高度为基准进行换算和移动的
+缺点：
+*/
+/**{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.box{
+    width: 100%;
+    height: 100%;
+    background:#e9dfc7; 
+    border:1px solid red;
+    position: relative;
+
+}
+img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}*/
+
+
+/*
+flex居中（水平垂直居中）
+优点：定位元素的宽高，对垂直居中没有影响
+缺点：css3特性，移动端ok，pc端有兼容性问题
+*/
+/**{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.box{
+    height: 100vh;
+    background:#e9dfc7; 
+    border:1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}*/
