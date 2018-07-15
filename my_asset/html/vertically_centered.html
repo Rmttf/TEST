@@ -9,5 +9,18 @@
 	<div class="box">
 		<img src="../../img/icon.jpg">
 	</div>
+	<script type="text/javascript">
+		var a = []
+
+		for(let i = 0;i<5;i++){
+			a[i] = function(){
+				console.log(i)
+			}
+		}
+
+		for (var k of a){
+			k();
+		}
+	</script>
 </body>
 </html>
