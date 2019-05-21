@@ -1,0 +1,51 @@
+.child-1 {
+    width: 100px;
+    height: 100px;
+    background-color: deepskyblue;
+}
+
+.child-2 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.child-3 {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+
+.child-4 {
+    width: 100px;
+    height: 100px;
+    background-color: indigo;
+}
+
+
+/**
+flex布局
+ */
+/*.parent {*/
+/*    width: 100%;*/
+/*    height: 600px;*/
+/*    border: 2px solid #761c19;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+
+/**
+grid布局
+ */
+.parent {
+    width: 100%;
+    height: 600px;
+    border: 2px solid #761c19;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    place-items: center;
+    justify-content: center;
+    align-content: center;
+}
